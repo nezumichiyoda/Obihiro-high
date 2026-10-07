@@ -97,7 +97,6 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
     z-index: 100;
 }
-
 .dropdown-menu a {
     display: block;
     color: #333;
@@ -113,6 +112,7 @@ body {
 .nav-dropdown:hover .dropdown-menu {
     display: block;
 }
+
 .nav-dropdown.open .dropdown-menu {
     display: block;
 }
