@@ -24,37 +24,34 @@ body {
 }
 
 .school-brand {
-    display: flex;
-    flex-direction: column;
+    line-height: 1.2;
 }
 
 .school-name-jp {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 24px;
+    font-weight: bold;
     letter-spacing: 0.08em;
 }
 
 .school-name-en {
-    font-size: 11px;
+    font-size: 10px;
+    color: #6d747b;
     letter-spacing: 0.2em;
-    color: #777;
-    margin-top: 2px;
+    margin-top: 4px;
 }
 
 .login-button {
+    color: #263b4d;
+    border: 1px solid #263b4d;
+    padding: 8px 18px;
     text-decoration: none;
-    color: #ffffff;
-    background: #263b4d;
-    padding: 10px 22px;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: opacity 0.2s ease;
+    font-size: 13px;
 }
 
 .login-button:hover {
-    opacity: 0.8;
+    background: #263b4d;
+    color: #ffffff;
 }
-
 
 /* NAVIGATION */
 
@@ -84,16 +81,6 @@ body {
 
 .nav-dropdown {
     position: relative;
-}
-
-.nav-button {
-    color: #ffffff;
-    background: transparent;
-    border: none;
-    padding: 17px 22px;
-    font-size: 14px;
-    cursor: pointer;
-    font-family: inherit;
 }
 
 .dropdown-menu {
@@ -137,100 +124,117 @@ body {
             rgba(20, 31, 42, 0.35),
             rgba(20, 31, 42, 0.35)
         ),
-        linear-gradient(135deg, #607383, #b4bdc5);
+        #697986;
     display: flex;
-    align-items: flex-end;
-    padding: 6%;
+    align-items: center;
+    padding: 60px 8%;
+    color: #ffffff;
 }
 
 .hero-content {
-    color: #ffffff;
+    max-width: 700px;
 }
 
 .hero-label {
     font-size: 12px;
-    letter-spacing: 0.25em;
-    margin-bottom: 8px;
+    letter-spacing: 0.18em;
+    margin-bottom: 12px;
+    opacity: 0.9;
 }
 
 .hero h1 {
-    font-size: clamp(36px, 6vw, 64px);
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
+    font-size: 46px;
+    margin-bottom: 15px;
 }
 
-.hero p:last-child {
-    font-size: 15px;
+.hero p {
+    font-size: 16px;
 }
-
 
 /* HOME GRID */
 
 .home-grid {
     max-width: 1200px;
-    margin: 45px auto;
-    padding: 0 25px;
+    margin: 40px auto;
+    padding: 0 6%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 24px;
 }
 
 .panel {
     background: #ffffff;
-    border: 1px solid #dfe3e7;
-    padding: 25px;
+    border: 1px solid #d9dde2;
+    padding: 28px;
 }
 
 .panel-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #263b4d;
+    border-bottom: 1px solid #d9dde2;
+    margin-bottom: 20px;
     padding-bottom: 12px;
-    margin-bottom: 5px;
 }
 
 .panel-heading h2 {
     font-size: 20px;
 }
 
-.panel-heading a {
-    color: #596b7a;
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.event,
+.event-item,
 .news-item {
-    border-bottom: 1px solid #e2e5e8;
-    padding: 15px 5px;
+    padding: 14px 0;
+    border-bottom: 1px solid #e7e9eb;
 }
 
-.event:last-child,
+.event-item:last-child,
 .news-item:last-child {
     border-bottom: none;
 }
 
-.event {
-    display: flex;
-    gap: 20px;
-}
-
-.event-date {
-    color: #263b4d;
-    font-weight: bold;
-    min-width: 55px;
-}
-
+.event-item span,
 .news-item span {
-    font-size: 11px;
-    color: #777;
+    display: block;
+    color: #68727b;
+    font-size: 12px;
+    margin-bottom: 3px;
 }
 
-.news-item p {
-    margin-top: 3px;
+/* PAGE HEADER */
+
+.page-header {
+    min-height: 280px;
+    background:
+        linear-gradient(
+            rgba(20, 31, 42, 0.45),
+            rgba(20, 31, 42, 0.45)
+        ),
+        #697986;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 50px 8%;
 }
 
+.page-header h1 {
+    font-size: 40px;
+    margin-bottom: 8px;
+}
+
+.page-header p {
+    font-size: 15px;
+}
+
+/* CONTENT */
+
+.content-section {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 6%;
+    display: grid;
+    gap: 24px;
+}
+
+.content-section p {
+    font-size: 14px;
+}
 
 /* FOOTER */
 
@@ -238,20 +242,14 @@ body {
     background: #263b4d;
     color: #ffffff;
     text-align: center;
-    padding: 30px;
-    margin-top: 60px;
+    padding: 30px 20px;
+    margin-top: 50px;
 }
 
-.site-footer p:first-child {
-    font-weight: bold;
-    margin-bottom: 5px;
+.site-footer p {
+    font-size: 12px;
+    margin: 4px 0;
 }
-
-.site-footer p:last-child {
-    font-size: 11px;
-    opacity: 0.7;
-}
-
 
 /* MOBILE */
 
@@ -259,10 +257,11 @@ body {
 
     .site-header {
         padding: 18px 5%;
+        min-height: 80px;
     }
 
     .school-name-jp {
-        font-size: 21px;
+        font-size: 19px;
     }
 
     .school-name-en {
@@ -270,32 +269,56 @@ body {
     }
 
     .login-button {
-        padding: 8px 14px;
+        padding: 7px 12px;
         font-size: 12px;
     }
 
     .main-navigation {
         padding: 0;
         overflow-x: auto;
+        white-space: nowrap;
     }
 
     .main-navigation > a,
     .nav-dropdown > button {
-        white-space: nowrap;
         padding: 15px 16px;
-        font-size: 12px;
+        font-size: 13px;
+    }
+
+    .dropdown-menu {
+        top: 48px;
     }
 
     .hero {
-        min-height: 360px;
-        padding: 8%;
+        min-height: 350px;
+        padding: 45px 7%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
     }
 
     .home-grid {
         grid-template-columns: 1fr;
-        margin-top: 25px;
+        padding: 0 5%;
+        margin: 25px auto;
+    }
+
+    .page-header {
+        min-height: 230px;
+        padding: 40px 7%;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .content-section {
+        padding: 0 5%;
+        margin: 25px auto;
     }
 }
+
 /* LOGIN PAGE */
 
 .login-page {
@@ -400,7 +423,6 @@ body {
     text-decoration: underline;
 }
 
-
 /* LOGIN MOBILE */
 
 @media (max-width: 500px) {
@@ -412,10 +434,4 @@ body {
     .login-card h1 {
         font-size: 24px;
     }
-
-}
-.login-card h1 {
-    font-size: 24px;
-}
-
 }
