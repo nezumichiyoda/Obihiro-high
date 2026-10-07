@@ -283,3 +283,121 @@ body {
         margin-top: 25px;
     }
 }
+/* LOGIN PAGE */
+
+.login-page {
+    min-height: 100vh;
+    background: #f4f5f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+}
+
+.login-container {
+    width: 100%;
+    max-width: 430px;
+}
+
+.login-card {
+    background: #ffffff;
+    border: 1px solid #d9dde2;
+    padding: 45px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+}
+
+.login-school {
+    text-align: center;
+    border-bottom: 1px solid #e1e4e7;
+    padding-bottom: 25px;
+    margin-bottom: 30px;
+}
+
+.login-school .school-name-jp {
+    font-size: 25px;
+}
+
+.login-school .school-name-en {
+    font-size: 9px;
+}
+
+.login-card h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.login-description {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+    margin-bottom: 30px;
+}
+
+.login-card form {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 7px;
+}
+
+.login-card input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #cfd4d9;
+    border-radius: 3px;
+    font-size: 14px;
+    margin-bottom: 20px;
+    outline: none;
+}
+
+.login-card input:focus {
+    border-color: #263b4d;
+}
+
+.login-submit {
+    border: none;
+    background: #263b4d;
+    color: #ffffff;
+    padding: 13px;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.login-submit:hover {
+    opacity: 0.85;
+}
+
+.back-home {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #596b7a;
+    font-size: 13px;
+    text-decoration: none;
+}
+
+.back-home:hover {
+    text-decoration: underline;
+}
+
+
+/* LOGIN MOBILE */
+
+@media (max-width: 500px) {
+
+    .login-card {
+        padding: 30px 22px;
+    }
+
+    .login-card h1 {
+        font-size: 24px;
+    }
+
+}
