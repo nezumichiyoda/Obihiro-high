@@ -1,286 +1,64 @@
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body {
-    font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
-    background: #f4f5f7;
-    color: #20252b;
-    line-height: 1.6;
-}
+    <title>ログイン | 帯広高等学校</title>
 
-/* HEADER */
+    <link rel="stylesheet" href="style.css">
+</head>
 
-.site-header {
-    min-height: 92px;
-    background: #ffffff;
-    border-bottom: 1px solid #d9dde2;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 6%;
-}
+<body class="login-page">
 
-.school-brand {
-    display: flex;
-    flex-direction: column;
-}
+    <main class="login-container">
 
-.school-name-jp {
-    font-size: 28px;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-}
+        <div class="login-card">
 
-.school-name-en {
-    font-size: 11px;
-    letter-spacing: 0.2em;
-    color: #777;
-    margin-top: 2px;
-}
+            <div class="login-school">
+                <div class="school-name-jp">帯広高等学校</div>
+                <div class="school-name-en">OBIHIRO HIGH SCHOOL</div>
+            </div>
 
-.login-button {
-    text-decoration: none;
-    color: #ffffff;
-    background: #263b4d;
-    padding: 10px 22px;
-    border-radius: 4px;
-    font-size: 14px;
-    transition: opacity 0.2s ease;
-}
+            <h1>ログイン</h1>
 
-.login-button:hover {
-    opacity: 0.8;
-}
+            <p class="login-description">
+                学校関係者ログイン
+            </p>
 
+            <form>
 
-/* NAVIGATION */
+                <label for="username">ユーザー名</label>
 
-.main-navigation {
-    background: #263b4d;
-    min-height: 54px;
-    display: flex;
-    align-items: center;
-    padding: 0 6%;
-}
+                <input
+                    type="text"
+                    id="username"
+                    name="username"
+                    placeholder="ユーザー名を入力"
+                >
 
-.main-navigation > a,
-.nav-dropdown > button {
-    color: #ffffff;
-    background: transparent;
-    border: none;
-    text-decoration: none;
-    padding: 17px 22px;
-    font-size: 14px;
-    cursor: pointer;
-}
+                <label for="password">パスワード</label>
 
-.main-navigation > a:hover,
-.nav-dropdown:hover > button {
-    background: rgba(255, 255, 255, 0.1);
-}
+                <input
+                    type="password"
+                    id="password"
+                    name="password"
+                    placeholder="パスワードを入力"
+                >
 
-.nav-dropdown {
-    position: relative;
-}
+                <button type="submit" class="login-submit">
+                    ログイン
+                </button>
 
-.dropdown-menu {
-    display: none;
-    position: absolute;
-    top: 54px;
-    left: 0;
-    min-width: 190px;
-    background: #ffffff;
-    border: 1px solid #d9dde2;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    z-index: 100;
-}
+            </form>
 
-.dropdown-menu a {
-    display: block;
-    color: #333;
-    text-decoration: none;
-    padding: 12px 16px;
-    font-size: 13px;
-}
+            <a href="index.html" class="back-home">
+                ← ホームへ戻る
+            </a>
 
-.dropdown-menu a:hover {
-    background: #f0f2f4;
-}
+        </div>
 
-.nav-dropdown:hover .dropdown-menu {
-    display: block;
-}
+    </main>
 
-
-/* HERO */
-
-.hero {
-    min-height: 440px;
-    background:
-        linear-gradient(
-            rgba(20, 31, 42, 0.35),
-            rgba(20, 31, 42, 0.35)
-        ),
-        linear-gradient(135deg, #607383, #b4bdc5);
-    display: flex;
-    align-items: flex-end;
-    padding: 6%;
-}
-
-.hero-content {
-    color: #ffffff;
-}
-
-.hero-label {
-    font-size: 12px;
-    letter-spacing: 0.25em;
-    margin-bottom: 8px;
-}
-
-.hero h1 {
-    font-size: clamp(36px, 6vw, 64px);
-    letter-spacing: 0.08em;
-    margin-bottom: 8px;
-}
-
-.hero p:last-child {
-    font-size: 15px;
-}
-
-
-/* HOME GRID */
-
-.home-grid {
-    max-width: 1200px;
-    margin: 45px auto;
-    padding: 0 25px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 25px;
-}
-
-.panel {
-    background: #ffffff;
-    border: 1px solid #dfe3e7;
-    padding: 25px;
-}
-
-.panel-heading {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-bottom: 2px solid #263b4d;
-    padding-bottom: 12px;
-    margin-bottom: 5px;
-}
-
-.panel-heading h2 {
-    font-size: 20px;
-}
-
-.panel-heading a {
-    color: #596b7a;
-    font-size: 12px;
-    text-decoration: none;
-}
-
-.event,
-.news-item {
-    border-bottom: 1px solid #e2e5e8;
-    padding: 15px 5px;
-}
-
-.event:last-child,
-.news-item:last-child {
-    border-bottom: none;
-}
-
-.event {
-    display: flex;
-    gap: 20px;
-}
-
-.event-date {
-    color: #263b4d;
-    font-weight: bold;
-    min-width: 55px;
-}
-
-.news-item span {
-    font-size: 11px;
-    color: #777;
-}
-
-.news-item p {
-    margin-top: 3px;
-}
-
-
-/* FOOTER */
-
-.site-footer {
-    background: #263b4d;
-    color: #ffffff;
-    text-align: center;
-    padding: 30px;
-    margin-top: 60px;
-}
-
-.site-footer p:first-child {
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.site-footer p:last-child {
-    font-size: 11px;
-    opacity: 0.7;
-}
-
-
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .site-header {
-        padding: 18px 5%;
-    }
-
-    .school-name-jp {
-        font-size: 21px;
-    }
-
-    .school-name-en {
-        font-size: 8px;
-    }
-
-    .login-button {
-        padding: 8px 14px;
-        font-size: 12px;
-    }
-
-    .main-navigation {
-        padding: 0;
-        overflow-x: auto;
-    }
-
-    .main-navigation > a,
-    .nav-dropdown > button {
-        white-space: nowrap;
-        padding: 15px 16px;
-        font-size: 12px;
-    }
-
-    .hero {
-        min-height: 360px;
-        padding: 8%;
-    }
-
-    .home-grid {
-        grid-template-columns: 1fr;
-        margin-top: 25px;
-    }
-}
-https://nezumichiyoda.github.io/Obihiro-high/login.html
+</body>
+</html>
