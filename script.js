@@ -3,7 +3,6 @@ document.querySelectorAll(".nav-dropdown > button").forEach(function(button) {
     button.addEventListener("click", function(event) {
 
         event.preventDefault();
-        event.stopPropagation();
 
         const dropdown = this.parentElement;
         const wasOpen = dropdown.classList.contains("open");
@@ -21,7 +20,7 @@ document.querySelectorAll(".nav-dropdown > button").forEach(function(button) {
 });
 
 
-// Close dropdowns when tapping outside the navigation
+// Close dropdown when tapping outside
 document.addEventListener("click", function(event) {
 
     if (!event.target.closest(".main-navigation")) {
