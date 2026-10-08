@@ -8,12 +8,10 @@ document.querySelectorAll(".nav-dropdown > button").forEach(function(button) {
         const dropdown = this.parentElement;
         const wasOpen = dropdown.classList.contains("open");
 
-        // Close every dropdown
         document.querySelectorAll(".nav-dropdown").forEach(function(otherDropdown) {
             otherDropdown.classList.remove("open");
         });
 
-        // If it wasn't already open, open it
         if (!wasOpen) {
             dropdown.classList.add("open");
         }
@@ -22,13 +20,16 @@ document.querySelectorAll(".nav-dropdown > button").forEach(function(button) {
 
 });
 
-// Close dropdowns when tapping somewhere outside the navigation
+
+// Close dropdowns when tapping outside the navigation
 document.addEventListener("click", function(event) {
 
     if (!event.target.closest(".main-navigation")) {
+
         document.querySelectorAll(".nav-dropdown").forEach(function(dropdown) {
             dropdown.classList.remove("open");
         });
+
     }
 
 });
