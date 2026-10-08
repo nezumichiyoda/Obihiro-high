@@ -107,6 +107,12 @@ body {
     background: #f0f2f4;
 }
 
+/* Open dropdown when tapped */
+.nav-dropdown.open .dropdown-menu {
+    display: block;
+}
+
+/* Desktop hover only */
 @media (min-width: 701px) {
     .nav-dropdown:hover .dropdown-menu {
         display: block;
