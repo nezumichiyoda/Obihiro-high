@@ -1,13 +1,34 @@
 document.querySelectorAll(".nav-dropdown > button").forEach(function(button) {
-    button.addEventListener("click", function() {
+
+    button.addEventListener("click", function(event) {
+
+        event.preventDefault();
+        event.stopPropagation();
+
         const dropdown = this.parentElement;
-        // Close all other dropdowns
+        const wasOpen = dropdown.classList.contains("open");
+
+        // Close every dropdown
         document.querySelectorAll(".nav-dropdown").forEach(function(otherDropdown) {
-            if (otherDropdown !== dropdown) {
-                otherDropdown.classList.remove("open");
-            }
+            otherDropdown.classList.remove("open");
         });
-        // Toggle the dropdown that was clicked
-        dropdown.classList.toggle("open");
+
+        // If it wasn't already open, open it
+        if (!wasOpen) {
+            dropdown.classList.add("open");
+        }
+
     });
+
+});
+
+// Close dropdowns when tapping somewhere outside the navigation
+document.addEventListener("click", function(event) {
+
+    if (!event.target.closest(".main-navigation")) {
+        document.querySelectorAll(".nav-dropdown").forEach(function(dropdown) {
+            dropdown.classList.remove("open");
+        });
+    }
+
 });
