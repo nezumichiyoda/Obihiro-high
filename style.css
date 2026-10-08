@@ -107,8 +107,10 @@ body {
     background: #f0f2f4;
 }
 
-.nav-dropdown:hover .dropdown-menu {
-    display: block;
+@media (min-width: 701px) {
+    .nav-dropdown:hover .dropdown-menu {
+        display: block;
+    }
 }
 
 .nav-dropdown.open .dropdown-menu {
