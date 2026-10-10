@@ -1,18 +1,16 @@
+/* RESET */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
 }
-
 body {
     font-family: Arial, "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
     background: #f4f5f7;
     color: #20252b;
     line-height: 1.6;
 }
-
 /* HEADER */
-
 .site-header {
     min-height: 92px;
     background: #ffffff;
@@ -22,24 +20,20 @@ body {
     justify-content: space-between;
     padding: 0 6%;
 }
-
 .school-brand {
     line-height: 1.2;
 }
-
 .school-name-jp {
     font-size: 24px;
     font-weight: bold;
     letter-spacing: 0.08em;
 }
-
 .school-name-en {
     font-size: 10px;
     color: #6d747b;
     letter-spacing: 0.2em;
     margin-top: 4px;
 }
-
 .login-button {
     color: #263b4d;
     border: 1px solid #263b4d;
@@ -47,22 +41,20 @@ body {
     text-decoration: none;
     font-size: 13px;
 }
-
 .login-button:hover {
     background: #263b4d;
     color: #ffffff;
 }
-
 /* NAVIGATION */
-
 .main-navigation {
     background: #263b4d;
     min-height: 54px;
     display: flex;
     align-items: center;
     padding: 0 6%;
+    position: relative;
+    z-index: 1000;
 }
-
 .main-navigation > a,
 .nav-dropdown > button {
     color: #ffffff;
@@ -72,59 +64,50 @@ body {
     padding: 17px 22px;
     font-size: 14px;
     cursor: pointer;
+    font-family: inherit;
+    display: block;
 }
-
 .main-navigation > a:hover,
-.nav-dropdown:hover > button {
+.nav-dropdown:hover > button,
+.nav-dropdown.open > button {
     background: rgba(255, 255, 255, 0.1);
 }
-
 .nav-dropdown {
     position: relative;
 }
-
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 54px;
+    top: 100%;
     left: 0;
     min-width: 190px;
     background: #ffffff;
     border: 1px solid #d9dde2;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    z-index: 100;
+    z-index: 1001;
+    white-space: normal;
 }
-
 .dropdown-menu a {
     display: block;
-    color: #333;
+    color: #333333;
     text-decoration: none;
     padding: 12px 16px;
     font-size: 13px;
+    background: #ffffff;
 }
-
 .dropdown-menu a:hover {
     background: #f0f2f4;
 }
-
-/* Open dropdown when tapped */
 .nav-dropdown.open .dropdown-menu {
     display: block;
 }
-
-/* Desktop hover only */
+/* DESKTOP DROPDOWN */
 @media (min-width: 701px) {
     .nav-dropdown:hover .dropdown-menu {
         display: block;
     }
 }
-
-.nav-dropdown.open .dropdown-menu {
-    display: block;
-}
-
 /* HERO */
-
 .hero {
     position: relative;
     min-height: 440px;
@@ -135,7 +118,6 @@ body {
     color: #ffffff;
     background: #697986;
 }
-
 .hero img {
     position: absolute;
     inset: 0;
@@ -145,7 +127,6 @@ body {
     object-position: center;
     z-index: 0;
 }
-
 .hero::after {
     content: "";
     position: absolute;
@@ -153,29 +134,25 @@ body {
     background: rgba(20, 31, 42, 0.35);
     z-index: 1;
 }
-
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 700px;
 }
-
 .hero-label {
     font-size: 12px;
     letter-spacing: 0.18em;
     margin-bottom: 12px;
     opacity: 0.9;
 }
-
 .hero h1 {
     font-size: 46px;
     margin-bottom: 15px;
 }
-
 .hero p {
     font-size: 16px;
 }
-
+/* HOMEPAGE CONTENT */
 .home-grid {
     max-width: 1200px;
     margin: 40px auto;
@@ -184,34 +161,28 @@ body {
     grid-template-columns: 1fr 1fr;
     gap: 24px;
 }
-
 .panel {
     background: #ffffff;
     border: 1px solid #d9dde2;
     padding: 28px;
 }
-
 .panel-heading {
     border-bottom: 1px solid #d9dde2;
     margin-bottom: 20px;
     padding-bottom: 12px;
 }
-
 .panel-heading h2 {
     font-size: 20px;
 }
-
 .event-item,
 .news-item {
     padding: 14px 0;
     border-bottom: 1px solid #e7e9eb;
 }
-
 .event-item:last-child,
 .news-item:last-child {
     border-bottom: none;
 }
-
 .event-item span,
 .news-item span {
     display: block;
@@ -219,9 +190,7 @@ body {
     font-size: 12px;
     margin-bottom: 3px;
 }
-
 /* PAGE HEADER */
-
 .page-header {
     min-height: 280px;
     background:
@@ -232,21 +201,19 @@ body {
         #697986;
     color: #ffffff;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
     padding: 50px 8%;
 }
-
 .page-header h1 {
     font-size: 40px;
     margin-bottom: 8px;
 }
-
 .page-header p {
     font-size: 15px;
 }
-
 /* CONTENT */
-
 .content-section {
     max-width: 1100px;
     margin: 40px auto;
@@ -254,13 +221,10 @@ body {
     display: grid;
     gap: 24px;
 }
-
 .content-section p {
     font-size: 14px;
 }
-
 /* FOOTER */
-
 .site-footer {
     background: #263b4d;
     color: #ffffff;
@@ -268,143 +232,76 @@ body {
     padding: 30px 20px;
     margin-top: 50px;
 }
-
 .site-footer p {
     font-size: 12px;
     margin: 4px 0;
 }
-
-/* MOBILE */
-
-/* MOBILE */
-
+/* MOBILE LAYOUT AND NAVIGATION */
 @media (max-width: 700px) {
-
     .site-header {
         min-height: 80px;
         padding: 12px 5%;
     }
-
     .school-name-jp {
         font-size: 19px;
     }
-
     .school-name-en {
         font-size: 8px;
     }
-
     .login-button {
         padding: 7px 12px;
         font-size: 12px;
     }
-
     .main-navigation {
         padding: 0;
-        overflow: visible;
         display: flex;
         flex-wrap: wrap;
         align-items: stretch;
+        overflow: visible;
     }
-
     .main-navigation > a,
     .nav-dropdown > button {
         padding: 13px 14px;
         font-size: 13px;
     }
-
     .nav-dropdown {
         position: relative;
     }
-
     .dropdown-menu {
         top: 100%;
         left: 0;
         min-width: 190px;
-        z-index: 1000;
+        max-width: 85vw;
+        z-index: 1001;
     }
-
     .hero {
         min-height: 350px;
         padding: 45px 7%;
     }
-
     .hero h1 {
         font-size: 34px;
     }
-
     .home-grid {
         grid-template-columns: 1fr;
         padding: 0 5%;
         margin: 25px auto;
     }
-
     .page-header {
         min-height: 230px;
         padding: 40px 7%;
     }
-
     .page-header h1 {
         font-size: 32px;
     }
-
     .content-section {
         padding: 0 5%;
         margin: 25px auto;
     }
-}
-    .login-button {
-        padding: 7px 12px;
-        font-size: 12px;
-    }
-
-    .main-navigation {
-        padding: 0;
-        overflow-x: auto;
-        white-space: nowrap;
-    }
-
-    .main-navigation > a,
-    .nav-dropdown > button {
-        padding: 15px 16px;
-        font-size: 13px;
-    }
-
-    .dropdown-menu {
-        top: 48px;
-    }
-
-    .hero {
-        min-height: 350px;
-        padding: 45px 7%;
-    }
-
-    .hero h1 {
-        font-size: 34px;
-    }
-
-    .home-grid {
-        grid-template-columns: 1fr;
-        padding: 0 5%;
-        margin: 25px auto;
-    }
-
-    .page-header {
-        min-height: 230px;
-        padding: 40px 7%;
-    }
-
-    .page-header h1 {
-        font-size: 32px;
-    }
-
-    .content-section {
-        padding: 0 5%;
-        margin: 25px auto;
+    .panel {
+        padding: 22px;
     }
 }
-
 /* LOGIN PAGE */
-
 .login-page {
     min-height: 100vh;
     background: #f4f5f7;
@@ -413,58 +310,48 @@ body {
     justify-content: center;
     padding: 30px 20px;
 }
-
 .login-container {
     width: 100%;
     max-width: 430px;
 }
-
 .login-card {
     background: #ffffff;
     border: 1px solid #d9dde2;
     padding: 45px;
     box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
 }
-
 .login-school {
     text-align: center;
     border-bottom: 1px solid #e1e4e7;
     padding-bottom: 25px;
     margin-bottom: 30px;
 }
-
 .login-school .school-name-jp {
     font-size: 25px;
 }
-
 .login-school .school-name-en {
     font-size: 9px;
 }
-
 .login-card h1 {
     text-align: center;
     font-size: 28px;
     margin-bottom: 5px;
 }
-
 .login-description {
     text-align: center;
-    color: #777;
+    color: #777777;
     font-size: 13px;
     margin-bottom: 30px;
 }
-
 .login-card form {
     display: flex;
     flex-direction: column;
 }
-
 .login-card label {
     font-size: 13px;
     font-weight: bold;
     margin-bottom: 7px;
 }
-
 .login-card input {
     width: 100%;
     padding: 13px;
@@ -474,11 +361,9 @@ body {
     margin-bottom: 20px;
     outline: none;
 }
-
 .login-card input:focus {
     border-color: #263b4d;
 }
-
 .login-submit {
     border: none;
     background: #263b4d;
@@ -489,11 +374,9 @@ body {
     cursor: pointer;
     margin-top: 5px;
 }
-
 .login-submit:hover {
     opacity: 0.85;
 }
-
 .back-home {
     display: block;
     text-align: center;
@@ -502,19 +385,14 @@ body {
     font-size: 13px;
     text-decoration: none;
 }
-
 .back-home:hover {
     text-decoration: underline;
 }
-
 /* LOGIN MOBILE */
-
 @media (max-width: 500px) {
-
     .login-card {
         padding: 30px 22px;
     }
-
     .login-card h1 {
         font-size: 24px;
     }
