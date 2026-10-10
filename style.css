@@ -276,12 +276,13 @@ body {
 
 /* MOBILE */
 
+/* MOBILE */
+
 @media (max-width: 700px) {
 
     .site-header {
-        .hero {
-    min-height: 330px;
-    padding: 40px 7%;
+        min-height: 80px;
+        padding: 12px 5%;
     }
 
     .school-name-jp {
@@ -292,6 +293,65 @@ body {
         font-size: 8px;
     }
 
+    .login-button {
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+
+    .main-navigation {
+        padding: 0;
+        overflow: visible;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: stretch;
+    }
+
+    .main-navigation > a,
+    .nav-dropdown > button {
+        padding: 13px 14px;
+        font-size: 13px;
+    }
+
+    .nav-dropdown {
+        position: relative;
+    }
+
+    .dropdown-menu {
+        top: 100%;
+        left: 0;
+        min-width: 190px;
+        z-index: 1000;
+    }
+
+    .hero {
+        min-height: 350px;
+        padding: 45px 7%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .home-grid {
+        grid-template-columns: 1fr;
+        padding: 0 5%;
+        margin: 25px auto;
+    }
+
+    .page-header {
+        min-height: 230px;
+        padding: 40px 7%;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .content-section {
+        padding: 0 5%;
+        margin: 25px auto;
+    }
+}
     .login-button {
         padding: 7px 12px;
         font-size: 12px;
